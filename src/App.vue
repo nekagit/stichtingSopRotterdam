@@ -1,53 +1,79 @@
 <script setup lang="ts">
 import {
-  Menubar,
-  MenubarContent,
-  MenubarItem,
-  MenubarMenu,
-  MenubarSeparator,
-  MenubarShortcut,
-  MenubarTrigger
-} from '@/components/ui/menubar'
-import { RouterView } from 'vue-router'
+Menubar,
+MenubarContent,
+MenubarItem,
+MenubarMenu,
+MenubarSeparator,
+MenubarShortcut,
+MenubarTrigger
+} from '@/components/ui/menubar';
+import { ref } from 'vue';
+import { RouterView } from 'vue-router';
+
+
+
+interface MenuBarItem {
+  title: string
+  path: string
+}
+
+const sport = ref([
+  { title: 'Prijava Dece', path: 'signIn' },
+  { title: 'Sportske Dane', path: 'sportDays' },
+  { title: 'Objave', path: 'sportPosts' },
+  { title: 'Nastava', path: 'school' }
+])
+
+const school = ref([
+  { title: 'Vesti', path: 'schoolNews' },
+  { title: 'Kontakt', path: 'schoolContat' },
+  { title: 'Gallerija', path: 'schoolGallery' }
+])
+
+const sop = ref([
+  { title: 'SOP', path: 'sop' },
+  { title: 'Instagram', path: 'socialMedia' },
+  { title: 'Facebook', path: 'socialMedia' },
+  { title: 'Kontakt', path: 'sopContact' }
+])
 </script>
 
 <template>
   <div class="h-screen flex flex-col justify-between" style="font-family: NM, sans-serif">
     <RouterView />
-    <div class="logo text-sky-400 animate-pulse">SOP<span style="font-size: 33pt;color: cadetblue;">Rotterdam</span></div>
-    <div class="logo2 text-red-200 animate-pulse">Sport, School & much more!</div>
     <Menubar class="menubar">
       <MenubarMenu>
         <MenubarTrigger>Sport</MenubarTrigger>
         <MenubarContent>
-          <MenubarItem> Prijava Deca <MenubarShortcut>⌘Sport</MenubarShortcut> </MenubarItem>
-          <MenubarItem>Prijavljeno</MenubarItem>
-          <MenubarSeparator />
-          <MenubarItem>Sportske Dane</MenubarItem>
-          <MenubarSeparator />
-          <MenubarItem>Gallery</MenubarItem>
+          <div v-for="item in sport" :key="item.path">
+            <MenubarItem @click="$router.push(item.path)">
+              {{ item.title }}<MenubarShortcut>⌘Sport</MenubarShortcut>
+            </MenubarItem>
+            <MenubarSeparator />
+          </div>
         </MenubarContent>
       </MenubarMenu>
       <MenubarMenu>
         <MenubarTrigger>School</MenubarTrigger>
-        <MenubarContent>
-          <MenubarItem> Nastava <MenubarShortcut>⌘School</MenubarShortcut> </MenubarItem>
-          <MenubarItem>Vesti</MenubarItem>
-          <MenubarSeparator />
-          <MenubarItem>Kontakt</MenubarItem>
-          <MenubarSeparator />
-          <MenubarItem>Gallery</MenubarItem>
+       <MenubarContent>
+          <div v-for="item in school" :key="item.path">
+            <MenubarItem @click="$router.push(item.path)">
+              {{ item.title }}<MenubarShortcut>⌘Sport</MenubarShortcut>
+            </MenubarItem>
+            <MenubarSeparator />
+          </div>
         </MenubarContent>
       </MenubarMenu>
       <MenubarMenu>
         <MenubarTrigger>SOP</MenubarTrigger>
-        <MenubarContent>
-          <MenubarItem> Facebook <MenubarShortcut>⌘SOP</MenubarShortcut> </MenubarItem>
-          <MenubarItem>Instagram</MenubarItem>
-          <MenubarSeparator />
-          <MenubarItem>Kontakt</MenubarItem>
-          <MenubarSeparator />
-          <MenubarItem>Ostalo</MenubarItem>
+    <MenubarContent>
+          <div v-for="item in sop" :key="item.path">
+            <MenubarItem @click="$router.push(item.path)">
+              {{ item.title }}<MenubarShortcut>⌘Sport</MenubarShortcut>
+            </MenubarItem>
+            <MenubarSeparator />
+          </div>
         </MenubarContent>
       </MenubarMenu>
     </Menubar>
@@ -57,19 +83,6 @@ import { RouterView } from 'vue-router'
 <style scoped>
 .menubar {
   margin: 0 auto;
-}
-.logo {
-  font-size: 88pt;
-  font-family: 'NM', sans-serif;
-  position: absolute;
-  top: 33%;
-  left: 33%;
-}
-.logo2 {
-  font-size: 33pt;
-  font-family: 'NM', sans-serif;
-  position: absolute;
-  top: 50%;
-  left: 33%;
+  border: 1px solid black;
 }
 </style>
