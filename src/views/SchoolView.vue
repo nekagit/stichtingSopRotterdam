@@ -1,8 +1,16 @@
 <script setup lang="ts">
+import type { ICustomCard } from '@/App.vue';
 import CustomCard from "../components/ui/card/CustomCard.vue";
+const schoolCard: ICustomCard = {
+    title: "schoolCard",
+    description: "This is description.",
+    cardPic: "../assets/logo.svg",
+    color: "red",
+    sectionHeaders: [{title: "Header1", description: "asdfasdfsadfsa"}]
+}
 </script>
 
 <template>
-<CustomCard />
+<CustomCard :data="schoolCard" />
 </template>
 
