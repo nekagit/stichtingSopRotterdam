@@ -22,12 +22,12 @@ const sport = ref([
   { title: 'Prijava Dece', path: 'signIn' },
   { title: 'Sportske Dane', path: 'sportDays' },
   { title: 'Objave', path: 'sportPosts' },
-  { title: 'Nastava', path: 'school' }
 ])
 
 const school = ref([
+  { title: 'Nastava', path: 'school' },
   { title: 'Vesti', path: 'schoolNews' },
-  { title: 'Kontakt', path: 'schoolContat' },
+  { title: 'Kontakt', path: 'schoolContact' },
   { title: 'Gallerija', path: 'schoolGallery' }
 ])
 
@@ -41,7 +41,9 @@ const sop = ref([
 
 <template>
   <div class="h-screen flex flex-col justify-between" style="font-family: NM, sans-serif">
-    <RouterView />
+    <data class="grid place-content-center h-full m-auto">
+      <RouterView />
+    </data>
     <Menubar class="menubar">
       <MenubarMenu>
         <MenubarTrigger>Sport</MenubarTrigger>
