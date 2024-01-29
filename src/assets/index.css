@@ -75,4 +75,20 @@
   body {
     @apply bg-background text-foreground;
   }
+  h3 {
+  font-size: 40pt;
+  font-weight: 600;
+  background-image: linear-gradient(to bottom, white, grey);
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+h5 {
+  font-size: 24pt;
+  font-weight: 600;
+  background-image: linear-gradient(to bottom, white, grey);
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+}
 }

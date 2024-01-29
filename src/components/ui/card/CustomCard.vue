@@ -1,5 +1,12 @@
 <script setup lang="ts">
 import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger
+} from '@/components/ui/accordion'
+import { Button } from '@/components/ui/button'
+import {
   Card,
   CardContent,
   CardDescription,
@@ -8,12 +15,6 @@ import {
   CardTitle
 } from '@/components/ui/card'
 import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger
-} from '@/components/ui/accordion'
-import {
   Sheet,
   SheetContent,
   SheetDescription,
@@ -21,25 +22,25 @@ import {
   SheetTitle,
   SheetTrigger
 } from '@/components/ui/sheet'
-// Define props explicitly
 const props = defineProps(['data'])
 </script>
 
+<!-- backgroundColor: props.data.color  -->
 <template>
-  <Card class="w-full md:w-[550px]" :style="{ backgroundColor: props.data.color }">
+  <Card class="card w-full md:w-[1750px]">
     <CardHeader class="d-flex flex-row justify-around">
-      <CardTitle class="text-5xl" style="margin-right: 7vw; margin-left: 3vw">
+      <CardTitle class="hover:text-black" style="margin-right: 7vw; margin-left: 3vw">
         {{ props.data.title }}
       </CardTitle>
       <img
         :src="props.data.cardPic"
         :alt="props.data.name"
-        :class="'h-60 w-60 object-cover transition-all hover:scale-105 aspect-square'"
+        :class="'h-60 w-60 border-4 object-cover transition-all hover:scale-105 aspect-square'"
         style="margin-top: -50px; margin-right: -100px"
       />
     </CardHeader>
     <CardDescription
-      class="text-white text-lg"
+      class="text-black text-xl"
       style="margin: auto; padding-left: 3vh; padding-right: 3vh"
       >{{ props.data.description }}</CardDescription
     >
@@ -48,7 +49,11 @@ const props = defineProps(['data'])
         <div v-for="sectionHeader in props.data.sectionHeaders" :key="sectionHeader.title">
           <Accordion type="single" collapsible>
             <AccordionItem value="item-1">
-              <AccordionTrigger>{{ sectionHeader.title }}</AccordionTrigger>
+              <AccordionTrigger class="hover:text-black no-underline">
+                <h5 class="hover:text-black">
+                  {{ sectionHeader.title }}
+                </h5>
+              </AccordionTrigger>
               <AccordionContent>
                 <img :src="sectionHeader.img" alt="sponsori" />
               </AccordionContent>
@@ -60,8 +65,11 @@ const props = defineProps(['data'])
       </form>
     </CardContent>
     <CardFooter class="flex justify-between px-6 pb-6">
+      <h5 class="hover:text-black">Prijava za Sportske dane</h5>
       <Sheet>
-        <SheetTrigger>Open</SheetTrigger>
+        <SheetTrigger>
+          <Button class="bg-white text-black hover:bg-black hover:text-white">Prijavi</Button>
+        </SheetTrigger>
         <SheetContent>
           <SheetHeader>
             <SheetTitle>Are you sure absolutely sure?</SheetTitle>
@@ -75,3 +83,13 @@ const props = defineProps(['data'])
     </CardFooter>
   </Card>
 </template>
+
+<style scoped>
+.card {
+  background: url('../../../assets/rectangle-frame-tropical-background/rm112-jj-016.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  margin: 3vh;
+}
+</style>
