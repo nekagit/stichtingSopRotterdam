@@ -25,7 +25,7 @@ export interface ISectionHeader {
     <data class="grid place-content-center h-full m-auto">
       <RouterView />
     </data>
-    <CustomMenubar />
+    <!-- <CustomMenubar /> -->
   </div>
 </template>
 <style scoped>

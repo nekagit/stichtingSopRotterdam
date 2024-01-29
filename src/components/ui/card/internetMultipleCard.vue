@@ -1,141 +1,45 @@
+<script setup lang="ts">
+import { ref } from 'vue'
+
+const allCards = ref([
+  { title: 'Prijava Dece', path: 'signIn' },
+  { title: 'Sportske Dane', path: 'sportDays' },
+  { title: 'Objave', path: 'sportPosts' },
+  { title: 'Vesti', path: 'schoolNews' },
+  { title: 'Gallerija', path: 'schoolGallery' },
+  { title: 'SOP', path: 'sop' },
+  { title: 'Kontakt', path: 'sopContact' }
+])
+</script>
 <template>
-<div class="ag-format-container">
-  <div class="ag-courses_box">
-    <div class="ag-courses_item">
-      <a href="#" class="ag-courses-item_link">
-        <div class="ag-courses-item_bg"></div>
+  <div class="ag-format-container">
+    <div class="ag-courses_box">
+      <div class="ag-courses_item"  v-for="item in allCards" :key="item.title">
+        <a href="#" class="ag-courses-item_link">
+          <div class="ag-courses-item_bg"></div>
 
-        <div class="ag-courses-item_title">
-          UI/Web&amp;Graph design for teenagers 11-17&#160;years old
-        </div>
+          <div class="ag-courses-item_title">
+          {{ item.title }}
+          </div>
 
-        <div class="ag-courses-item_date-box">
-          Start:
-          <span class="ag-courses-item_date">
-            04.11.2022
-          </span>
-        </div>
-      </a>
+          <div class="ag-courses-item_date-box">
+            <span class="ag-courses-item_date"> {{ item.path }}</span>
+          </div>
+        </a>
+      </div>
     </div>
-
-    <div class="ag-courses_item">
-      <a href="#" class="ag-courses-item_link">
-        <div class="ag-courses-item_bg"></div>
-
-        <div class="ag-courses-item_title">
-          UX/UI Web-Design&#160;+ Mobile Design
-        </div>
-
-        <div class="ag-courses-item_date-box">
-          Start:
-          <span class="ag-courses-item_date">
-            04.11.2022
-          </span>
-        </div>
-      </a>
-    </div>
-
-    <div class="ag-courses_item">
-      <a href="#" class="ag-courses-item_link">
-        <div class="ag-courses-item_bg"></div>
-
-        <div class="ag-courses-item_title">
-          Annual package "Product+UX/UI+Graph designer&#160;2022"
-        </div>
-
-        <div class="ag-courses-item_date-box">
-          Start:
-          <span class="ag-courses-item_date">
-            04.11.2022
-          </span>
-        </div>
-      </a>
-    </div>
-
-    <div class="ag-courses_item">
-      <a href="#" class="ag-courses-item_link">
-        <div class="ag-courses-item_bg"></div>
-
-        <div class="ag-courses-item_title">
-          Graphic Design
-        </div>
-
-        <div class="ag-courses-item_date-box">
-          Start:
-          <span class="ag-courses-item_date">
-            04.11.2022
-          </span>
-        </div>
-      </a>
-    </div>
-
-    <div class="ag-courses_item">
-      <a href="#" class="ag-courses-item_link">
-        <div class="ag-courses-item_bg"></div>
-
-        <div class="ag-courses-item_title">
-          Motion Design
-        </div>
-
-        <div class="ag-courses-item_date-box">
-          Start:
-          <span class="ag-courses-item_date">
-            30.11.2022
-          </span>
-        </div>
-      </a>
-    </div>
-
-    <div class="ag-courses_item">
-      <a href="#" class="ag-courses-item_link">
-        <div class="ag-courses-item_bg"></div>
-
-        <div class="ag-courses-item_title">
-          Front-end development&#160;+ jQuery&#160;+ CMS
-        </div>
-      </a>
-    </div>
-
-    <div class="ag-courses_item">
-      <a href="#" class="ag-courses-item_link">
-        <div class="ag-courses-item_bg">
-        </div>
-        <div class="ag-courses-item_title">
-          Digital Marketing
-        </div>
-      </a>
-    </div>
-
-    <div class="ag-courses_item">
-      <a href="#" class="ag-courses-item_link">
-        <div class="ag-courses-item_bg"></div>
-
-        <div class="ag-courses-item_title">
-          Interior Design
-        </div>
-
-        <div class="ag-courses-item_date-box">
-          Start:
-          <span class="ag-courses-item_date">
-            31.10.2022
-          </span>
-        </div>
-      </a>
-    </div>
-
   </div>
-</div>
+  <!-- <InternetAnimationCard />
+<InternetCardAnimation2 />
+<InternetCardPost />
+<InternetCardSchool /> -->
 </template>
 
 <style scoped>
 .ag-format-container {
-  width: 1142px;
-  margin: 0 auto;
-}
-
-
-body {
-  background-color: #000;
+  width: 90%;
+  margin: auto;
+  padding-top: 10vh;
 }
 .ag-courses_box {
   display: -webkit-box;
@@ -146,14 +50,11 @@ body {
   align-items: flex-start;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-
-  padding: 50px 0;
 }
 .ag-courses_item {
   -ms-flex-preferred-size: calc(33.33333% - 30px);
   flex-basis: calc(33.33333% - 30px);
-
-  margin: 0 15px 30px;
+  margin: 0 15px 100px;
 
   overflow: hidden;
 
@@ -161,7 +62,8 @@ body {
 }
 .ag-courses-item_link {
   display: block;
-  padding: 30px 20px;
+  height: 25vh;
+  padding: 10px 20px;
   background-color: #121212;
 
   overflow: hidden;
@@ -171,7 +73,7 @@ body {
 .ag-courses-item_link:hover,
 .ag-courses-item_link:hover .ag-courses-item_date {
   text-decoration: none;
-  color: #FFF;
+  color: #fff;
 }
 .ag-courses-item_link:hover .ag-courses-item_bg {
   -webkit-transform: scale(10);
@@ -180,20 +82,20 @@ body {
 }
 .ag-courses-item_title {
   min-height: 87px;
-  margin: 0 0 25px;
+  margin: 0 0 65px;
 
   overflow: hidden;
 
   font-weight: bold;
   font-size: 30px;
-  color: #FFF;
+  color: #fff;
 
   z-index: 2;
   position: relative;
 }
 .ag-courses-item_date-box {
   font-size: 18px;
-  color: #FFF;
+  color: #fff;
 
   z-index: 2;
   position: relative;
@@ -202,9 +104,9 @@ body {
   font-weight: bold;
   color: #f9b234;
 
-  -webkit-transition: color .5s ease;
-  -o-transition: color .5s ease;
-  transition: color .5s ease
+  -webkit-transition: color 0.5s ease;
+  -o-transition: color 0.5s ease;
+  transition: color 0.5s ease;
 }
 .ag-courses-item_bg {
   height: 128px;
@@ -218,9 +120,9 @@ body {
 
   border-radius: 50%;
 
-  -webkit-transition: all .5s ease;
-  -o-transition: all .5s ease;
-  transition: all .5s ease;
+  -webkit-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
 }
 .ag-courses_item:nth-child(2n) .ag-courses-item_bg {
   background-color: #3ecd5e;
@@ -238,8 +140,6 @@ body {
   background-color: #4c49ea;
 }
 
-
-
 @media only screen and (max-width: 979px) {
   .ag-courses_item {
     -ms-flex-preferred-size: calc(50% - 30px);
@@ -254,7 +154,6 @@ body {
   .ag-format-container {
     width: 96%;
   }
-
 }
 @media only screen and (max-width: 639px) {
   .ag-courses_item {

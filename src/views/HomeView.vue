@@ -2,7 +2,7 @@
 import type { ICustomCard } from '@/App.vue'
 import HomePic from '../assets/image1.png'
 import Sponsors from '../assets/logoo.png'
-import InternetCard from '../components/ui/card/internetCard.vue'
+import InternetMultipleCard from '../components/ui/card/internetMultipleCard.vue'
 import Card from '../views/AboutView.vue'
 const homeCard: ICustomCard = {
   title: 'Welcome to SOP Rotterdam',
@@ -16,6 +16,7 @@ const homeCard: ICustomCard = {
 </script>
 
 <template>
-  <InternetCard />
+  <!-- <InternetCard /> -->
+  <InternetMultipleCard />
   <!-- <CustomCard :data="homeCard" /> -->
 </template>
