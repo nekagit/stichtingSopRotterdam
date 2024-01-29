@@ -28,7 +28,7 @@ const allCards = ref([
         </a>
       </div>
     </div>
-  </div>
+  </div>adf
   <!-- <InternetAnimationCard />
 <InternetCardAnimation2 />
 <InternetCardPost />

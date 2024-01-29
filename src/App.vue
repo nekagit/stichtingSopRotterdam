@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { type Component } from 'vue'
 import { RouterView } from 'vue-router'
-import CustomMenubar from '../src/components/ui/menubar/CustomMenubar.vue'
+import Stars from '@/components/ui/Stars.vue'
 export interface ICustomCard {
   title: string
   description: string
@@ -18,9 +18,10 @@ export interface ISectionHeader {
 </script>
 
 <template>
+  <!-- <Stars /> -->
   <div
     class="h-screen flex flex-col justify-between"
-    style="background-color:rgba(0, 0, 0, 0.805); font-family: NM, sans-serif"
+    style="background-color: rgba(0, 0, 0, 0.921); font-family: NM, sans-serif"
   >
     <data class="grid place-content-center h-full m-auto">
       <RouterView />
@@ -28,5 +29,4 @@ export interface ISectionHeader {
     <!-- <CustomMenubar /> -->
   </div>
 </template>
-<style scoped>
-</style>
+<style scoped></style>
