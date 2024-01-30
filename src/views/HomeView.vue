@@ -8,6 +8,9 @@ const homeCard: IMainCard = allCards[0]
 </script>
 
 <template>
-  <MultipleCard :allCards="allCards" />
-  <FullAnimationCard v-bind="homeCard" />
+  <div class="d-flex flex-row">
+    <MultipleCard :allCards="allCards.slice(0, allCards.length / 2)" />
+    <FullAnimationCard v-bind="homeCard" />
+    <MultipleCard :allCards="allCards.slice(allCards.length / 2, allCards.length)" />
+  </div>
 </template>

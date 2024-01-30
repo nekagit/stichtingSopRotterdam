@@ -19,15 +19,11 @@ defineProps(['allCards'])
       </a>
     </div>
   </div>
-  <!-- <InternetAnimationCard />
-<InternetCardAnimation2 />
-<InternetCardPost />
-<InternetCardSchool /> -->
 </template>
 
 <style scoped>
 .ag-courses_box {
-  width: 88%;
+  height: 100%;
   margin: auto;
   margin-top: 5vh;
   display: -webkit-box;
@@ -43,7 +39,7 @@ defineProps(['allCards'])
 .ag-courses_item {
   -ms-flex-preferred-size: calc(33.33333% - 30px);
   flex-basis: calc(33.33333% - 30px);
-  margin: 0 80px 80px;
+  margin: 0 10px 10px;
   overflow: hidden;
   border-radius: 28px;
 }
