@@ -1,67 +1,10 @@
 <script setup lang="ts">
 import Stars from '@/components/ui/Stars.vue'
-import Stars2 from '@/components/ui/card/Stars2.vue'
 defineProps(['allCards'])
 </script>
 <template>
   <div class="ag-courses_box">
     <div class="ag-courses_item" v-for="(item, index) in allCards" :key="index">
-      <a href="#" class="ag-courses-item_link gradient">
-        <div class="ag-courses-item_bg"></div>
-
-        <div class="ag-courses-item_title">
-          {{ item.title }}
-        </div>
-
-        <div class="ag-courses-item_date-box">
-          <span class="ag-courses-item_date"> {{ item.path }}</span>
-        </div>
-      </a>
-      <a href="#" class="ag-courses-item_link">
-        <div class="ag-courses-item_bg"></div>
-
-        <div class="ag-courses-item_title">
-          {{ item.title }}
-        </div>
-
-        <div class="ag-courses-item_date-box">
-          <span class="ag-courses-item_date"> {{ item.path }}</span>
-        </div>
-      </a>
-      <a href="#" class="ag-courses-item_link gradient3">
-        <div class="ag-courses-item_bg"></div>
-
-        <div class="ag-courses-item_title">
-          {{ item.title }}
-        </div>
-
-        <div class="ag-courses-item_date-box">
-          <span class="ag-courses-item_date"> {{ item.path }}</span>
-        </div>
-      </a>
-      <a href="#" class="ag-courses-item_link gradient2">
-        <div class="ag-courses-item_bg"></div>
-
-        <div class="ag-courses-item_title">
-          {{ item.title }}
-        </div>
-
-        <div class="ag-courses-item_date-box">
-          <span class="ag-courses-item_date"> {{ item.path }}</span>
-        </div>
-      </a>
-      <a href="#" class="ag-courses-item_link">
-        <Stars2 />
-        <div class="ag-courses-item_bg"></div>
-
-        <div class="ag-courses-item_title">
-          {{ item.title }}
-        </div>
-
-        <div class="ag-courses-item_date-box">
-          <span class="ag-courses-item_date"> {{ item.path }}</span>
-        </div>
-      </a>
       <a href="#" class="ag-courses-item_link">
         <Stars />
         <div class="ag-courses-item_bg"></div>

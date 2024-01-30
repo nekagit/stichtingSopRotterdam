@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import type { IMainCard } from '@/App.vue'
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger
 } from '@/components/ui/accordion'
+import type { IMainCard } from '@/interfaces/App';
 defineProps<IMainCard>()
 </script>
 

@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import type { ICustomCard } from '@/App.vue'
 import {
   Accordion,
   AccordionContent,
@@ -23,6 +22,7 @@ import {
   SheetTitle,
   SheetTrigger
 } from '@/components/ui/sheet'
+import type { ICustomCard } from '@/interfaces/App'
 const props = defineProps<ICustomCard>()
 </script>
 

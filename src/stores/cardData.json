@@ -1,0 +1,82 @@
+{
+  "allCards": [
+    {
+      "title": "Welcome to SOP Rotterdam",
+      "description": "We offer information about serbian schooling and Rotterdam Sport Days",
+      "cardPic": "HomePic",
+      "color": "rgba(58, 110, 241)",
+      "sectionHeaders": [
+        {
+          "title": "Sponsors",
+          "img": "Sponsors",
+          "description": "asdfasdfsadfsa"
+        }
+      ]
+    },
+    {
+      "title": "Welcome to SOP Rotterdam",
+      "description": "We offer information about serbian schooling and Rotterdam Sport Days",
+      "cardPic": "HomePic",
+      "color": "rgba(58, 110, 241)",
+      "sectionHeaders": [
+        {
+          "title": "Sponsors",
+          "img": "Sponsors",
+          "description": "asdfasdfsadfsa"
+        }
+      ]
+    },
+    {
+      "title": "Welcome to SOP Rotterdam",
+      "description": "We offer information about serbian schooling and Rotterdam Sport Days",
+      "cardPic": "HomePic",
+      "color": "rgba(58, 110, 241)",
+      "sectionHeaders": [
+        {
+          "title": "Sponsors",
+          "img": "Sponsors",
+          "description": "asdfasdfsadfsa"
+        }
+      ]
+    },
+    {
+      "title": "Welcome to SOP Rotterdam",
+      "description": "We offer information about serbian schooling and Rotterdam Sport Days",
+      "cardPic": "HomePic",
+      "color": "rgba(58, 110, 241)",
+      "sectionHeaders": [
+        {
+          "title": "Sponsors",
+          "img": "Sponsors",
+          "description": "asdfasdfsadfsa"
+        }
+      ]
+    },
+    {
+      "title": "Welcome to SOP Rotterdam",
+      "description": "We offer information about serbian schooling and Rotterdam Sport Days",
+      "cardPic": "HomePic",
+      "color": "rgba(58, 110, 241)",
+      "sectionHeaders": [
+        {
+          "title": "Sponsors",
+          "img": "Sponsors",
+          "description": "asdfasdfsadfsa"
+        }
+      ]
+    },
+    {
+      "title": "Welcome to SOP Rotterdam",
+      "description": "We offer information about serbian schooling and Rotterdam Sport Days",
+      "cardPic": "HomePic",
+      "color": "rgba(58, 110, 241)",
+      "sectionHeaders": [
+        {
+          "title": "Sponsors",
+          "img": "Sponsors",
+          "description": "asdfasdfsadfsa"
+        }
+      ]
+    }
+  ]
+}
