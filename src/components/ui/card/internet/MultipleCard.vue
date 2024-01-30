@@ -1,34 +1,81 @@
 <script setup lang="ts">
-import { ref } from 'vue'
-
-const allCards = ref([
-  { title: 'Prijava Dece', path: 'signIn' },
-  { title: 'Sportske Dane', path: 'sportDays' },
-  { title: 'Objave', path: 'sportPosts' },
-  { title: 'Vesti', path: 'schoolNews' },
-  { title: 'Gallerija', path: 'schoolGallery' },
-  { title: 'SOP', path: 'sop' },
-  { title: 'Kontakt', path: 'sopContact' }
-])
+import Stars from '@/components/ui/Stars.vue'
+import Stars2 from '@/components/ui/card/Stars2.vue'
+defineProps(['allCards'])
 </script>
 <template>
-  <div class="ag-format-container">
-    <div class="ag-courses_box">
-      <div class="ag-courses_item"  v-for="item in allCards" :key="item.title">
-        <a href="#" class="ag-courses-item_link">
-          <div class="ag-courses-item_bg"></div>
+  <div class="ag-courses_box">
+    <div class="ag-courses_item" v-for="(item, index) in allCards" :key="index">
+      <a href="#" class="ag-courses-item_link gradient">
+        <div class="ag-courses-item_bg"></div>
 
-          <div class="ag-courses-item_title">
+        <div class="ag-courses-item_title">
           {{ item.title }}
-          </div>
+        </div>
 
-          <div class="ag-courses-item_date-box">
-            <span class="ag-courses-item_date"> {{ item.path }}</span>
-          </div>
-        </a>
-      </div>
+        <div class="ag-courses-item_date-box">
+          <span class="ag-courses-item_date"> {{ item.path }}</span>
+        </div>
+      </a>
+      <a href="#" class="ag-courses-item_link">
+        <div class="ag-courses-item_bg"></div>
+
+        <div class="ag-courses-item_title">
+          {{ item.title }}
+        </div>
+
+        <div class="ag-courses-item_date-box">
+          <span class="ag-courses-item_date"> {{ item.path }}</span>
+        </div>
+      </a>
+      <a href="#" class="ag-courses-item_link gradient3">
+        <div class="ag-courses-item_bg"></div>
+
+        <div class="ag-courses-item_title">
+          {{ item.title }}
+        </div>
+
+        <div class="ag-courses-item_date-box">
+          <span class="ag-courses-item_date"> {{ item.path }}</span>
+        </div>
+      </a>
+      <a href="#" class="ag-courses-item_link gradient2">
+        <div class="ag-courses-item_bg"></div>
+
+        <div class="ag-courses-item_title">
+          {{ item.title }}
+        </div>
+
+        <div class="ag-courses-item_date-box">
+          <span class="ag-courses-item_date"> {{ item.path }}</span>
+        </div>
+      </a>
+      <a href="#" class="ag-courses-item_link">
+        <Stars2 />
+        <div class="ag-courses-item_bg"></div>
+
+        <div class="ag-courses-item_title">
+          {{ item.title }}
+        </div>
+
+        <div class="ag-courses-item_date-box">
+          <span class="ag-courses-item_date"> {{ item.path }}</span>
+        </div>
+      </a>
+      <a href="#" class="ag-courses-item_link">
+        <Stars />
+        <div class="ag-courses-item_bg"></div>
+
+        <div class="ag-courses-item_title">
+          {{ item.title }}
+        </div>
+
+        <div class="ag-courses-item_date-box">
+          <span class="ag-courses-item_date"> {{ item.path }}</span>
+        </div>
+      </a>
     </div>
-  </div>adf
+  </div>
   <!-- <InternetAnimationCard />
 <InternetCardAnimation2 />
 <InternetCardPost />
@@ -36,28 +83,25 @@ const allCards = ref([
 </template>
 
 <style scoped>
-.ag-format-container {
-  width: 90%;
-  margin: auto;
-  padding-top: 10vh;
-}
 .ag-courses_box {
+  width: 88%;
+  margin: auto;
+  margin-top: 5vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: start;
-  -ms-flex-align: start;
-  align-items: flex-start;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
+  justify-content: space-around;
 }
 .ag-courses_item {
   -ms-flex-preferred-size: calc(33.33333% - 30px);
   flex-basis: calc(33.33333% - 30px);
-  margin: 0 15px 100px;
-
+  margin: 0 80px 80px;
   overflow: hidden;
-
   border-radius: 28px;
 }
 .ag-courses-item_link {
@@ -65,9 +109,7 @@ const allCards = ref([
   height: 25vh;
   padding: 10px 20px;
   background-color: #121212;
-
   overflow: hidden;
-
   position: relative;
 }
 .ag-courses-item_link:hover,
@@ -131,10 +173,10 @@ const allCards = ref([
   background-color: #e44002;
 }
 .ag-courses_item:nth-child(4n) .ag-courses-item_bg {
-  background-color: #952aff;
+  background-color: #ff2a2a;
 }
 .ag-courses_item:nth-child(5n) .ag-courses-item_bg {
-  background-color: #cd3e94;
+  background-color: #0c10a0;
 }
 .ag-courses_item:nth-child(6n) .ag-courses-item_bg {
   background-color: #4c49ea;
@@ -171,6 +213,33 @@ const allCards = ref([
   }
   .ag-courses-item_date-box {
     font-size: 16px;
+  }
+}
+.gradient {
+  background: linear-gradient(-45deg, #a82a03, #000000, #8d370f, #a2951c);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+}
+.gradient2 {
+  background: linear-gradient(-45deg, #000000, #7f5700, #025f81, #9c1919);
+  background-size: 400% 400%;
+  animation: gradient 30s ease infinite;
+}
+.gradient3 {
+  background: linear-gradient(-45deg, #d4d4d4, #810000, #8d8d8d, #9c1919);
+  background-size: 400% 400%;
+  animation: gradient 30s ease infinite;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
   }
 }
 </style>

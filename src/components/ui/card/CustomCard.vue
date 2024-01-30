@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import type { ICustomCard } from '@/App.vue'
 import {
   Accordion,
   AccordionContent,
@@ -22,19 +23,19 @@ import {
   SheetTitle,
   SheetTrigger
 } from '@/components/ui/sheet'
-const props = defineProps(['data'])
+const props = defineProps<ICustomCard>()
 </script>
 
-<!-- backgroundColor: props.data.color  -->
+<!-- backgroundColor: props.color  -->
 <template>
   <Card class="card w-full md:w-[1750px]">
     <CardHeader class="d-flex flex-row justify-around">
       <CardTitle class="hover:text-black" style="margin-right: 7vw; margin-left: 3vw">
-        {{ props.data.title }}
+        {{ props.title }}
       </CardTitle>
       <img
-        :src="props.data.cardPic"
-        :alt="props.data.name"
+        :src="props.cardPic"
+        :alt="props.title"
         :class="'h-60 w-60 border-4 object-cover transition-all hover:scale-105 aspect-square'"
         style="margin-top: -50px; margin-right: -100px"
       />
@@ -42,11 +43,11 @@ const props = defineProps(['data'])
     <CardDescription
       class="text-black text-xl"
       style="margin: auto; padding-left: 3vh; padding-right: 3vh"
-      >{{ props.data.description }}</CardDescription
+      >{{ props.description }}</CardDescription
     >
     <CardContent>
       <form>
-        <div v-for="sectionHeader in props.data.sectionHeaders" :key="sectionHeader.title">
+        <div v-for="sectionHeader in props.sectionHeaders" :key="sectionHeader.title">
           <Accordion type="single" collapsible>
             <AccordionItem value="item-1">
               <AccordionTrigger class="hover:text-black no-underline">

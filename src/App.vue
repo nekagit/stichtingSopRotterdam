@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { type Component } from 'vue'
 import { RouterView } from 'vue-router'
-import Stars from '@/components/ui/Stars.vue'
 export interface ICustomCard {
   title: string
   description: string
@@ -9,6 +8,15 @@ export interface ICustomCard {
   cardPic: string
   color: string
 }
+export interface IMainCard {
+  title: string
+  description?: string
+  sectionHeaders?: ISectionHeader[]
+  cardPic?: string
+  color?: string
+  path?: string
+}
+
 export interface ISectionHeader {
   title: string
   description: string
@@ -18,15 +26,12 @@ export interface ISectionHeader {
 </script>
 
 <template>
-  <!-- <Stars /> -->
-  <div
-    class="h-screen flex flex-col justify-between"
-    style="background-color: rgba(0, 0, 0, 0.921); font-family: NM, sans-serif"
-  >
-    <data class="grid place-content-center h-full m-auto">
-      <RouterView />
-    </data>
-    <!-- <CustomMenubar /> -->
-  </div>
+  <RouterView />
 </template>
-<style scoped></style>
+<style scoped>
+body {
+  overflow: hidden;
+  margin: 0;
+  background-image: linear-gradient(to top, #accbee 0%, #e7f0fd 100%);
+}
+</style>

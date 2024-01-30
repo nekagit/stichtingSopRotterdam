@@ -718,7 +718,7 @@ html {
     431px 334px #fff,
     897px 15px #fff,
     705px 146px #fff;
-  animation: animStar 50s linear infinite;
+  animation: animStarX 50s linear infinite;
 }
 #stars:after {
   content: ' ';
@@ -1635,7 +1635,7 @@ html {
     1060px 444px #fff,
     323px 1676px #fff,
     1593px 1616px #fff;
-  animation: animStar 100s linear infinite;
+  animation: animStarX 100s linear infinite;
 }
 #stars2:after {
   content: ' ';
@@ -1952,7 +1952,7 @@ html {
     1193px 1421px #fff,
     564px 455px #fff,
     1675px 589px #fff;
-  animation: animStar 150s linear infinite;
+  animation: animStarX 150s linear infinite;
 }
 #stars3:after {
   content: ' ';
@@ -2085,7 +2085,7 @@ html {
   -webkit-text-fill-color: transparent;
 }
 
-@keyframes animStar {
+@keyframes animStarX {
   from {
     transform: translateX(0px);
   }
