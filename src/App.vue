@@ -1,12 +1,12 @@
 <script setup lang="ts">
-import ParticlesBackground from '@/components/ui/background/ParticlesBackground.vue'
+import Stars from '@/components/ui/background/Stars.vue'
 import { RouterView } from 'vue-router'
 </script>
 
 <template>
   <data class="grid place-content-center h-screen m-auto">
     <RouterView />
-    <ParticlesBackground />
   </data>
+  <Stars />
 </template>
 <style scoped></style>

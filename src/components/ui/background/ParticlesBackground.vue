@@ -1,237 +1,159 @@
-<script setup lang="js">
-//
-// I'm hotlinking to some SVG images from flaticon.com
-// for use as the snowflakes. I hope that remains possible
-// especially with the below attribution;
-//
-// ❄ Icons made by Freepik from www.flaticon.com
-// ❄ https://www.flaticon.com/packs/snowflakes
-//
-
-let colorType = {
-  type: "multi"
-};
-
-let colors = {
-  color1: "rgba(255,255,255,1)",
-  color2: "rgba(233,239,250,1)",
-  color3: "rgba(222,241,250,1)",
-  color4: "rgba(178,209,219,1)",
-  color5: "rgba(135,143,145,1)"
-};
-
-let options = {
-  alphaSpeed: 2,
-  alphaVariance: 1,
-  color: [colors.color1, colors.color2, colors.color3, colors.color4],
-  composition: "source-over",
-  count: 120,
-  direction: 160,
-  drift: 2,
-  glow: 50,
-  imageUrl: [
-    "https://assets.codepen.io/13471/snowflake.png",
-    "https://assets.codepen.io/13471/snowflake(1).png",
-    "https://assets.codepen.io/13471/snowflake(2).png",
-    "https://assets.codepen.io/13471/snowflake(3).png",
-    "https://assets.codepen.io/13471/snowflake(4).png",
-    "https://assets.codepen.io/13471/snowflake(5).png",
-    "https://assets.codepen.io/13471/snowflake(6).png",
-    "https://assets.codepen.io/13471/snowflake(7).png",
-    "https://assets.codepen.io/13471/snowflake(8).png",
-  ],
-  maxAlpha: 2,
-  maxSize: 24,
-  minAlpha: -0.2,
-  minSize: 3,
-  parallax: 6,
-  rotation: 0.5,
-  shape: ["image"],
-  speed: 2.5,
-  style: "fill",
-  twinkle: false,
-  xVariance: 20,
-  yVariance: 20,
-};
-
-window.onload = function() {
-  initStats();
-  initSparticles();
-  initGui();
-}
-
-window.initSparticles = function() {
-  var $main = document.querySelector("main");
-  window.mySparticles = new Sparticles($main,options);
-};
-
-window.initStats = function() {
-  var stats = new Stats();
-  stats.domElement.classList.add("stats");
-  document.body.appendChild(stats.domElement);
-  function statsDisplay() {
-    stats.begin();
-    stats.end();
-    requestAnimationFrame(statsDisplay);
-  }
-  requestAnimationFrame(statsDisplay);
-};
-
-window.initGui = function() {
-  const s = window.mySparticles;
-  const shapes = ["circle", "square", "triangle", "diamond", "line", "image"];
-  const styles = ["fill", "stroke", "both"];
-  const colorOptions = ["single", "multi", "rainbow"];
-  const composites = [
-    "source-over",
-    "source-in",
-    "source-out",
-    "source-atop",
-    "destination-over",
-    "destination-in",
-    "destination-out",
-    "destination-atop",
-    "lighter",
-    "copy",
-    "xor",
-    "multiply",
-    "screen",
-    "overlay",
-    "darken",
-    "color-dodge",
-    "color-burn",
-    "hard-light",
-    "soft-light",
-    "difference",
-    "exclusion",
-    "hue",
-    "saturation",
-    "color",
-    "luminosity"
-  ];
-  const rerender = () => {
-    window.mySparticles.destroy();
-    window.initSparticles();
-  };
-  var rerenderColors = function(v) {
-    if (colorType.type === "rainbow") {
-      options.color = "rainbow";
-    } else if (colorType.type === "single") {
-      options.color = colors.color1;
-    } else {
-      options.color = Object.keys(colors).map(i => {
-        return colors[i];
-      });
-    }
-    rerender();
-  };
-
-  const gui = new dat.GUI({ load: options });
-  const part = gui.addFolder("Particles");
-  part.open();
-  part.add( options, "count", 1, 1500, 1).onFinishChange(rerender);
-  part.add( options, "shape", shapes).onFinishChange(rerender);
-  part.add( options, "style", styles).onFinishChange(rerender);
-  const image = part.addFolder("Image");
-  // image.add( options, "imageUrl").onFinishChange(rerender);
-  part.add( options, "minSize", 1, 50, 1).onFinishChange(rerender);
-  part.add( options, "maxSize", 1, 50, 1).onFinishChange(rerender);
-  const anim = gui.addFolder("Animation");
-  anim.add( options, "direction", 0, 360, 1).onFinishChange(rerender);
-  anim.add( options, "speed", 0, 100, 0.1).onFinishChange(rerender);
-  anim.add( options, "rotation", 0, 100, 0.1).onFinishChange(rerender);
-  const move = anim.addFolder("Movement");
-  move.add( options, "parallax", 0, 10, 0.1).onFinishChange(rerender);
-  move.add( options, "drift", 0, 10, 0.1).onFinishChange(rerender);
-  move.add( options, "xVariance", 0, 50, 0.1).onFinishChange(rerender);
-  move.add( options, "yVariance", 0, 50, 0.1).onFinishChange(rerender);
-  const vis = gui.addFolder("Visual");
-  vis.add( options, "glow", 0,50).onFinishChange(rerender);
-  vis.add( options, "composition", composites).onFinishChange(rerender);
-  const alpha = vis.addFolder("Alpha");
-  alpha.add( options, "twinkle").onFinishChange(rerender);
-  alpha.add( options, "minAlpha", -2, 2, 0.1).onFinishChange(rerender);
-  alpha.add( options, "maxAlpha", -2, 2, 0.1).onFinishChange(rerender);
-  alpha.add( options, "alphaSpeed", 0, 50, 1).onFinishChange(rerender);
-  alpha.add( options, "alphaVariance", 0, 20, 1).onFinishChange(rerender);
-  const color = vis.addFolder("Color");
-  color.open();
-  color.add(colorType, "type", colorOptions).onFinishChange(rerenderColors);
-  color.addColor(colors, "color1").onFinishChange(rerenderColors);
-  color.addColor(colors, "color2").onFinishChange(rerenderColors);
-  color.addColor(colors, "color3").onFinishChange(rerenderColors);
-  color.addColor(colors, "color4").onFinishChange(rerenderColors);
-  color.addColor(colors, "color5").onFinishChange(rerenderColors);
-};
-</script>
+<script setup lang="ts"></script>
 
 <template>
-<main id=app>
-  <div class="text">
-    <h1>
-      Obligatory Holiday Falling Snow
-    </h1>
-    <p>Using the incredibly light-weight, super-high-performance, bestest canvas particle system in Javascript; Sparticles!</p>
-    <a href="https://github.com/simeydotme/sparticles" class="link">Get Sparticles on Github for this holiday season!</a>
+  <div id="stars-container">
+    <div id="stars"></div>
+    <div id="stars2"></div>
+    <div id="stars3"></div>
   </div>
-</main>
 </template>
 
 <style scoped lang="scss">
-
-main {
-  width: 100%;
-  height: 100%;
-  position: relative;
-  display: grid;
-  padding-top: 30px;
-  z-index: 1;
-  background-position: bottom center;
+@mixin translate50 {
+  -webkit-transform: translate(-50, -50%);
+  -ms-transform: translate(-50, -50%);
+  -o-transform: translate(-50, -50%);
+  transform: translate(-50, -50%);
 }
 
-main > .text {
-  place-self: center;
-  text-align: center;
-  max-width: 50vw;
+@mixin roundedCorners {
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
 }
 
-.stats {
-  position: absolute;
-  left: 10px;
-  top: 10px;
-  z-index: 10;
-  filter: saturate(0);
+@mixin rotateBase {
+  -webkit-transform: rotate3d(-1, 1, 0, 0deg);
+  -ms-transform: rotate3d(-1, 1, 0, 0deg);
+  -o-transform: rotate3d(-1, 1, 0, 0deg);
+  transform: rotate3d(-1, 1, 0, 0deg);
 }
 
-#app canvas {
-  z-index: -1;
-  position: fixed;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  mix-blend-mode: overlay;
+@mixin rotateRight {
+  -webkit-transform: rotate3d(-1, 1, 0, 30deg);
+  -ms-transform: rotate3d(-1, 1, 0, 30deg);
+  -o-transform: rotate3d(-1, 1, 0, 30deg);
+  transform: rotate3d(-1, 1, 0, 30deg);
 }
 
-h1 {
-  font-size: 6vw;
-  font-weight: 100;
-  font-family: "Mountains of Christmas", cursive;
-  margin: 0 auto 15px;
+@mixin rotateLeft {
+  -webkit-transform: rotate3d(-1, 1, 0, -30deg);
+  -ms-transform: rotate3d(-1, 1, 0, -30deg);
+  -o-transform: rotate3d(-1, 1, 0, -30deg);
+  transform: rotate3d(-1, 1, 0, -30deg);
 }
 
-.dg.ac {
-  z-index: 2!important;
+// n is number of stars generated
+@function generateStars($n) {
+  $value: '#{0} #{random(2000)}px #{random(2000)}px #FFF';
+
+  @for $i from 2 through $n {
+    $value: '#{$value} , #{random(2000)}px #{random(2000)}px #FFF';
+  }
+
+  @return unquote($value);
 }
 
-.link {
-  display: block;
-  position: absolute;
-  left: 0;
-  bottom: 20px;
-  width: 100%;
-  margin: 0 auto;
-  text-align: center;
-  color: white;
+$stars-small: generateStars(700);
+$stars-medium: generateStars(200);
+$stars-big: generateStars(100);
+
+
+#stars-container {
+  height: 200vh;
+  width: 200%;
+  background: radial-gradient(ellipse at bottom, #1b2735 0%, #191f24 100%);
+  overflow: hidden;
+  @include translate50;
+}
+
+#stars {
+  width: 1px;
+  height: 1px;
+  background: transparent;
+  box-shadow: $stars-small;
+  animation: animateStars 28.5s ease-in-out infinite;
+  @include roundedCorners;
+
+  &::after {
+    content: ' ';
+    position: absolute;
+    margin: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 1px;
+    height: 1px;
+    background: transparent;
+    box-shadow: $stars-small;
+    @include roundedCorners;
+  }
+}
+
+#stars2 {
+  width: 2px;
+  height: 2px;
+  background: transparent;
+  box-shadow: $stars-medium;
+  animation: animateStars 30s ease-in-out infinite;
+  @include roundedCorners;
+
+  &::after {
+    content: ' ';
+    position: absolute;
+    margin: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 2px;
+    height: 2px;
+    background: transparent;
+    box-shadow: $stars-medium;
+    @include roundedCorners;
+  }
+}
+
+#stars3 {
+  width: 3px;
+  height: 3px;
+  background: transparent;
+  box-shadow: $stars-big;
+  animation: animateStars 31.5s ease-in-out infinite;
+  @include roundedCorners;
+
+  &:after {
+    content: ' ';
+    position: absolute;
+    margin: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 3px;
+    height: 3px;
+    background: transparent;
+    box-shadow: $stars-big;
+    @include roundedCorners;
+  }
+}
+
+@keyframes animateStars {
+  0% {
+    @include rotateBase;
+  }
+  25% {
+    @include rotateRight;
+  }
+  50% {
+    @include rotateBase;
+  }
+  75% {
+    @include rotateLeft;
+  }
+  100% {
+    @include rotateBase;
+  }
 }
 </style>
