@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import Stars from '@/components/ui/Stars.vue'
-defineProps(['allCards'])
+import CardData from '@/stores/cardData.json'
+const allCards = CardData.allCards
 </script>
 <template>
   <div class="ag-courses_box">
@@ -14,7 +14,7 @@ defineProps(['allCards'])
         </div>
 
         <div class="ag-courses-item_date-box">
-          <span class="ag-courses-item_date"> {{ item.path }}</span>
+          <span class="ag-courses-item_date"> {{ item.description }}</span>
         </div>
       </a>
     </div>

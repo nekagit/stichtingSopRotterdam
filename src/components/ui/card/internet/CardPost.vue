@@ -1,8 +1,10 @@
-<template>asdf
-<div class="card">
-  <p>A glass-like card to demonstrate the <strong>Glassmorphism UI design</strong> trend.</p>
-  <p class="card-footer">Created by Rahul C.</p>
-</div>asdf
+<script setup lang="ts">
+import type AnimatedTextVue from './AnimatedText.vue';
+</script>
+<template>
+  <div class="card">
+    <AnimatedTextVue />
+  </div>
 </template>
 
 <style scoped>
@@ -25,20 +27,20 @@ p:not(:last-child) {
 }
 
 body {
-  font: 1em/1.618 Inter, sans-serif;
+  font:
+    1em/1.618 Inter,
+    sans-serif;
 
   display: flex;
   align-items: center;
   justify-content: center;
-  
+
   min-height: 100vh;
   padding: 30px;
   margin: 0;
-  
+
   color: #224;
-  background:
-    url(https://source.unsplash.com/E8Ufcyxz514/2400x1823)
-    center / cover no-repeat fixed;
+  background: url(https://source.unsplash.com/E8Ufcyxz514/2400x1823) center / cover no-repeat fixed;
 }
 
 .card {
@@ -52,7 +54,7 @@ body {
   height: 300px;
   padding: 35px;
 
-  border: 1px solid rgba(255, 255, 255, .25);
+  border: 1px solid rgba(255, 255, 255, 0.25);
   border-radius: 20px;
   background-color: rgba(255, 255, 255, 0.45);
   box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.25);
@@ -64,5 +66,4 @@ body {
   font-size: 0.65em;
   color: #446;
 }
-
 </style>

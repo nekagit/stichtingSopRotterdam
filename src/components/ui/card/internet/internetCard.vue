@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import InternetMultipleCard from './internetMultipleCard.vue';
 
 </script>
 <template>
