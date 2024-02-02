@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import Stars from '@/components/ui/background/Stars.vue'
 import { RouterView } from 'vue-router'
+
 </script>
 
 <template>

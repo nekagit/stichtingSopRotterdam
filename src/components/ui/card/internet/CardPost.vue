@@ -1,69 +1,55 @@
 <script setup lang="ts">
-import type AnimatedTextVue from './AnimatedText.vue';
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger
+} from '@/components/ui/accordion'
+import CustomImage from '@/components/ui/baseElements/CustomImage.vue'
+import type { ICustomCard } from '@/interfaces/App'
+import Sponsors from '../../../../assets/logoo.png'
+const props = defineProps<ICustomCard>()
 </script>
+
 <template>
   <div class="card">
-    <AnimatedTextVue />
+    <h1>Stichting SOP Rotterdam</h1>
+    <h3>School Sports & more Activity</h3>
+
+    <div class="cardContent">
+      <div v-for="sectionHeader in props.sectionHeaders" :key="sectionHeader.title">
+        <Accordion type="single" collapsible>
+          <AccordionItem value="item-1">
+            <AccordionTrigger class="hover:text-black no-underline">
+              <h5 class="hover:text-black">
+                {{ sectionHeader.title }}
+              </h5>
+            </AccordionTrigger>
+            <AccordionContent>
+              <CustomImage :src="Sponsors" />
+            </AccordionContent>
+          </AccordionItem>
+        </Accordion>
+      </div>
+    </div>
   </div>
 </template>
 
 <style scoped>
-:root {
-  font-size: 20px;
-}
-
-*,
-*:before,
-*:after {
-  box-sizing: border-box;
-}
-
-p {
-  margin: 0;
-}
-
-p:not(:last-child) {
-  margin-bottom: 1.5em;
-}
-
-body {
-  font:
-    1em/1.618 Inter,
-    sans-serif;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  min-height: 100vh;
-  padding: 30px;
-  margin: 0;
-
-  color: #224;
-  background: url(https://source.unsplash.com/E8Ufcyxz514/2400x1823) center / cover no-repeat fixed;
-}
-
 .card {
-  max-width: 300px;
-  min-height: 200px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-
-  max-width: 500px;
-  height: 300px;
+  margin: auto;
+  min-width: 80%;
+  height: auto;
   padding: 35px;
-
   border: 1px solid rgba(255, 255, 255, 0.25);
   border-radius: 20px;
   background-color: rgba(255, 255, 255, 0.45);
   box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.25);
-
   backdrop-filter: blur(15px);
+  
 }
 
-.card-footer {
-  font-size: 0.65em;
-  color: #446;
+.cardContent {
+  overflow: hidden;
 }
 </style>

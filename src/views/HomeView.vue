@@ -1,11 +1,10 @@
 <script setup lang="ts">
-import CardPost from '@/components/ui/card/internet/CardPost.vue';
-import type { IMainCard } from '@/interfaces/App'
+import CardPost from '@/components/ui/card/internet/CardPost.vue'
 import CardData from '@/stores/cardData.json'
 const allCards = CardData.allCards
-const homeCard: IMainCard = allCards[0]
+const homeCard = allCards[0]
 </script>
 
 <template>
-  <CardPost />
+  <CardPost v-bind="homeCard" />
 </template>
