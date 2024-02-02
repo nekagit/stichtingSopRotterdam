@@ -14,7 +14,7 @@ body {
   background-size:
     30px 30px,
     30px 30px;
-  background-color: rgb(62, 62, 86);
+  background-color: rgb(50, 50, 90);
   animation: gradientAnimation 300s linear infinite;
 }
 

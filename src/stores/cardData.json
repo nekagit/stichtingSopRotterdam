@@ -1,8 +1,51 @@
 {
   "allCards": [
     {
-      "title": "Welcome to SOP Rotterdam",
+      "title": "Stichting SOP Rotterdam",
+      "description": "School Sports & more Activity",
+      "cardPic": "HomePic",
+      "active": false,
+      "color": "rgba(58, 110, 241)",
+      "sectionHeaders": [
+        {
+          "title": "Sponsors",
+          "img": "Sponsors",
+          "description": ""
+        }
+      ]
+    },
+    {
+      "title": "SOP School",
+      "description": "Classes about serbian language, history and more",
+      "active": false,
+      "cardPic": "SchoolPic",
+      "color": "rgba(58, 110, 241)",
+      "sectionHeaders": [
+        {
+          "title": "Nastava",
+          "img": "Sponsors",
+          "description": "asdfasdfsadfsa"
+        }
+      ]
+    },
+    {
+      "title": "SOP Sports",
+      "active": false,
+      "description": "Sport events and courses in offer!",
+      "cardPic": "SportPic",
+      "color": "rgba(58, 110, 241)",
+      "sectionHeaders": [
+        {
+          "title": "Sportske Dane",
+          "img": "Sponsors",
+          "description": "asdfasdfsadfsa"
+        }
+      ]
+    },
+    {
+      "title": "Gallery",
       "description": "We offer information about serbian schooling and Rotterdam Sport Days",
+      "active": false,
       "cardPic": "HomePic",
       "color": "rgba(58, 110, 241)",
       "sectionHeaders": [
@@ -14,60 +57,9 @@
       ]
     },
     {
-      "title": "Welcome to SOP Rotterdam",
+      "title": "Contact",
       "description": "We offer information about serbian schooling and Rotterdam Sport Days",
-      "cardPic": "HomePic",
-      "color": "rgba(58, 110, 241)",
-      "sectionHeaders": [
-        {
-          "title": "Sponsors",
-          "img": "Sponsors",
-          "description": "asdfasdfsadfsa"
-        }
-      ]
-    },
-    {
-      "title": "Welcome to SOP Rotterdam",
-      "description": "We offer information about serbian schooling and Rotterdam Sport Days",
-      "cardPic": "HomePic",
-      "color": "rgba(58, 110, 241)",
-      "sectionHeaders": [
-        {
-          "title": "Sponsors",
-          "img": "Sponsors",
-          "description": "asdfasdfsadfsa"
-        }
-      ]
-    },
-    {
-      "title": "Welcome to SOP Rotterdam",
-      "description": "We offer information about serbian schooling and Rotterdam Sport Days",
-      "cardPic": "HomePic",
-      "color": "rgba(58, 110, 241)",
-      "sectionHeaders": [
-        {
-          "title": "Sponsors",
-          "img": "Sponsors",
-          "description": "asdfasdfsadfsa"
-        }
-      ]
-    },
-    {
-      "title": "Welcome to SOP Rotterdam",
-      "description": "We offer information about serbian schooling and Rotterdam Sport Days",
-      "cardPic": "HomePic",
-      "color": "rgba(58, 110, 241)",
-      "sectionHeaders": [
-        {
-          "title": "Sponsors",
-          "img": "Sponsors",
-          "description": "asdfasdfsadfsa"
-        }
-      ]
-    },
-    {
-      "title": "Welcome to SOP Rotterdam",
-      "description": "We offer information about serbian schooling and Rotterdam Sport Days",
+      "active": false,
       "cardPic": "HomePic",
       "color": "rgba(58, 110, 241)",
       "sectionHeaders": [

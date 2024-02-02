@@ -12,20 +12,18 @@ const props = defineProps<ICustomCard>()
 </script>
 
 <template>
-  <div class="card">
-    <h1>Stichting SOP Rotterdam</h1>
-    <h3>School Sports & more Activity</h3>
-
+  <div class="card sm:w-screen md:w-32 lg:w-screen mx-5">
     <div class="cardContent">
       <div v-for="sectionHeader in props.sectionHeaders" :key="sectionHeader.title">
         <Accordion type="single" collapsible>
           <AccordionItem value="item-1">
-            <AccordionTrigger class="hover:text-black no-underline">
-              <h5 class="hover:text-black">
+            <AccordionTrigger class="hover:text-white no-underline">
+              <h3 class="hover:text-white">
                 {{ sectionHeader.title }}
-              </h5>
+              </h3>
             </AccordionTrigger>
             <AccordionContent>
+              {{ sectionHeader.description }}
               <CustomImage :src="Sponsors" />
             </AccordionContent>
           </AccordionItem>
@@ -38,15 +36,14 @@ const props = defineProps<ICustomCard>()
 <style scoped>
 .card {
   margin: auto;
-  min-width: 80%;
-  height: auto;
-  padding: 35px;
+  width: 100%;
+  padding: 21px;
   border: 1px solid rgba(255, 255, 255, 0.25);
   border-radius: 20px;
-  background-color: rgba(255, 255, 255, 0.45);
+  background-color: rgba(255, 255, 255, 0);
   box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.25);
   backdrop-filter: blur(15px);
-  
+  overflow: hidden;
 }
 
 .cardContent {

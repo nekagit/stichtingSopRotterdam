@@ -2,6 +2,7 @@ import { type Component } from 'vue'
 export interface ICustomCard {
   title: string
   description: string
+  active:boolean
   sectionHeaders: ISectionHeader[]
   cardPic: string
   color: string
@@ -9,6 +10,7 @@ export interface ICustomCard {
 export interface IMainCard {
   title: string
   description?: string
+  active: boolean
   sectionHeaders?: ISectionHeader[]
   cardPic?: string
   color?: string

@@ -1,22 +1,45 @@
 <script setup lang="ts">
-import CardData from '@/stores/cardData.json'
-const allCards = CardData.allCards
+import Stars from '@/components/ui/background/Stars.vue'
+import CardPost from '@/components/ui/card/internet/CardPost.vue'
+import { useCardStore } from '@/stores/card'
+const { setActive, setInactive } = useCardStore()
+const allCards = useCardStore().cards
 </script>
 <template>
   <div class="ag-courses_box">
     <div class="ag-courses_item" v-for="(item, index) in allCards" :key="index">
-      <a href="#" class="ag-courses-item_link">
-        <Stars />
-        <div class="ag-courses-item_bg"></div>
+      <div v-if="item.active == true">
+        <a href="#" class="ag-courses-item_link_main">
+          <Stars />
+          <div class="ag-courses-item_bg" >
+            <div class="ag-courses-item-bg-text"></div>
+          </div>
 
-        <div class="ag-courses-item_title">
-          {{ item.title }}
-        </div>
+          <div class="ag-courses-item_title" @click="setInactive(item.title)">
+            {{ item.title }}
+          </div>
 
-        <div class="ag-courses-item_date-box">
-          <span class="ag-courses-item_date"> {{ item.description }}</span>
-        </div>
-      </a>
+          <div class="ag-courses-item_date-box">
+            <CardPost v-bind="item" />
+          </div>
+        </a>
+      </div>
+      <div v-else>
+        <a href="#" class="ag-courses-item_link">
+          <Stars />
+          <div class="ag-courses-item_bg" >
+            <div class="ag-courses-item-bg-text"></div>
+          </div>
+
+          <div class="ag-courses-item_title" @click="setActive(item.title)">
+            {{ item.title }}
+          </div>
+
+          <div class="ag-courses-item_date-box">
+            <span class="ag-courses-item_date"> {{ item.description }}</span>
+          </div>
+        </a>
+      </div>
     </div>
   </div>
 </template>
@@ -39,17 +62,33 @@ const allCards = CardData.allCards
 .ag-courses_item {
   -ms-flex-preferred-size: calc(33.33333% - 30px);
   flex-basis: calc(33.33333% - 30px);
-  margin: 0 10px 10px;
   overflow: hidden;
   border-radius: 28px;
 }
-.ag-courses-item_link {
+.ag-courses-item_link_main::-webkit-scrollbar {
+  display: none;
+}
+.ag-courses-item_link_main {
   display: block;
-  height: 25vh;
+  max-height: 33vh;
   padding: 10px 20px;
   background-color: #121212;
   overflow: hidden;
+  overflow-y: auto;
   position: relative;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+.ag-courses-item_link {
+  display: block;
+  max-height: 10vh;
+  padding: 15px;
+  background-color: #121212;
+  overflow: hidden;
+  overflow-y: auto;
+  position: relative;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
 .ag-courses-item_link:hover,
 .ag-courses-item_link:hover .ag-courses-item_date {
@@ -63,16 +102,14 @@ const allCards = CardData.allCards
 }
 .ag-courses-item_title {
   min-height: 87px;
-  margin: 0 0 65px;
-
   overflow: hidden;
-
   font-weight: bold;
   font-size: 30px;
   color: #fff;
-
   z-index: 2;
-  position: relative;
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
 }
 .ag-courses-item_date-box {
   font-size: 18px;
@@ -90,7 +127,7 @@ const allCards = CardData.allCards
   transition: color 0.5s ease;
 }
 .ag-courses-item_bg {
-  height: 128px;
+  height:128px;
   width: 128px;
   background-color: #f9b234;
 
@@ -104,6 +141,14 @@ const allCards = CardData.allCards
   -webkit-transition: all 0.5s ease;
   -o-transition: all 0.5s ease;
   transition: all 0.5s ease;
+}
+.ag-courses-item-bg-text {
+  position: absolute;
+  bottom: 18px;
+  left: 21px;
+  font-size: x-large;
+  font-weight: 800;
+  color: white;
 }
 .ag-courses_item:nth-child(2n) .ag-courses-item_bg {
   background-color: #3ecd5e;

@@ -70,6 +70,7 @@ const sop = ref([
 
 <style scoped>
 .menubar {
+  position: absolute;
   margin: 0 auto;
   color:white;
   border: 1px solid white;
