@@ -5,7 +5,7 @@ import { RouterView } from 'vue-router'
 </script>
 
 <template>
-  <data class="grid place-content-center h-screen m-auto">
+  <data class="grid h-screen m-auto">
     <RouterView />
     <MenuBar />
   </data>

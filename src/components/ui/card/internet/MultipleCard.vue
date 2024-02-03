@@ -5,22 +5,20 @@ import { useCardStore } from '@/stores/card'
 const { setActive, setInactive } = useCardStore()
 const allCards = useCardStore().cards
 </script>
+
+
 <template>
-  <div class="ag-courses_box">
+  <div class="trick">
+  <div class="grid h-screen w-fit mx-auto p-20">
     <div class="ag-courses_item" v-for="(item, index) in allCards" :key="index">
       <div v-if="item.active == true">
         <a href="#" class="ag-courses-item_link_main">
+          <div class="ag-courses-item_title" @click="setInactive(item.title)">
+              {{ item.title }}
+          </div>
+          <CardPost v-bind="item" />
           <Stars />
           <div class="ag-courses-item_bg" >
-            <div class="ag-courses-item-bg-text"></div>
-          </div>
-
-          <div class="ag-courses-item_title" @click="setInactive(item.title)">
-            {{ item.title }}
-          </div>
-
-          <div class="ag-courses-item_date-box">
-            <CardPost v-bind="item" />
           </div>
         </a>
       </div>
@@ -42,35 +40,20 @@ const allCards = useCardStore().cards
       </div>
     </div>
   </div>
+  </div>
 </template>
 
 <style scoped>
-.ag-courses_box {
-  height: 100%;
-  margin: auto;
-  margin-top: 5vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  justify-content: space-around;
-}
-.ag-courses_item {
-  -ms-flex-preferred-size: calc(33.33333% - 30px);
-  flex-basis: calc(33.33333% - 30px);
-  overflow: hidden;
-  border-radius: 28px;
+.trick {
+  position: absolute;
+  left: -540px;
 }
 .ag-courses-item_link_main::-webkit-scrollbar {
   display: none;
 }
 .ag-courses-item_link_main {
   display: block;
-  max-height: 33vh;
+  height: 33vh;
   padding: 10px 20px;
   background-color: #121212;
   overflow: hidden;
@@ -165,6 +148,34 @@ const allCards = useCardStore().cards
 .ag-courses_item:nth-child(6n) .ag-courses-item_bg {
   background-color: #4c49ea;
 }
+.gradient {
+  background: linear-gradient(-45deg, #a82a03, #000000, #8d370f, #a2951c);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+}
+.gradient2 {
+  background: linear-gradient(-45deg, #000000, #7f5700, #025f81, #9c1919);
+  background-size: 400% 400%;
+  animation: gradient 30s ease infinite;
+}
+.gradient3 {
+  background: linear-gradient(-45deg, #d4d4d4, #810000, #8d8d8d, #9c1919);
+  background-size: 400% 400%;
+  animation: gradient 30s ease infinite;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
 
 @media only screen and (max-width: 979px) {
   .ag-courses_item {
@@ -199,31 +210,5 @@ const allCards = useCardStore().cards
     font-size: 16px;
   }
 }
-.gradient {
-  background: linear-gradient(-45deg, #a82a03, #000000, #8d370f, #a2951c);
-  background-size: 400% 400%;
-  animation: gradient 15s ease infinite;
-}
-.gradient2 {
-  background: linear-gradient(-45deg, #000000, #7f5700, #025f81, #9c1919);
-  background-size: 400% 400%;
-  animation: gradient 30s ease infinite;
-}
-.gradient3 {
-  background: linear-gradient(-45deg, #d4d4d4, #810000, #8d8d8d, #9c1919);
-  background-size: 400% 400%;
-  animation: gradient 30s ease infinite;
-}
 
-@keyframes gradient {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
 </style>
