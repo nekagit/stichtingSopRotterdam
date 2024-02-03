@@ -13,4 +13,5 @@ import { RouterView } from 'vue-router'
     <Stars />
     
 </template>
+baklava
 <style scoped></style>
