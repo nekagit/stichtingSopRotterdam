@@ -15,6 +15,10 @@ import { RouterView } from 'vue-router'
 </template>
 <nav>
   Baklava
-  Pokusaj 123
+  Pokusaj 123     
 </nav>
+
+<div>
+  Probica       
+</div>
 <style scoped></style>
