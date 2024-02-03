@@ -13,5 +13,8 @@ import { RouterView } from 'vue-router'
     <Stars />
     
 </template>
-baklava
+<nav>
+  Baklava
+  Pokusaj 123
+</nav>
 <style scoped></style>
