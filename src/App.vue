@@ -5,16 +5,10 @@ import { RouterView } from 'vue-router'
 </script>
 
 <template>
-
-    <data class="grid place-content-center h-screen m-auto">
-      <RouterView />
-      <MenuBar />
-    </data>
-    <Stars />
-    
+  <data class="grid place-content-center h-screen m-auto">
+    <RouterView />
+    <MenuBar />
+  </data>
+  <Stars />
 </template>
-<nav>
-  Baklava
-  Pokusaj 123
-</nav>
 <style scoped></style>
