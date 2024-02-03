@@ -5,8 +5,8 @@ import {
   AccordionItem,
   AccordionTrigger
 } from '@/components/ui/accordion'
-import type { IMainCard } from '@/interfaces/App';
-defineProps<IMainCard>()
+import type { ICustomCard } from '@/interfaces/App'
+defineProps<ICustomCard>()
 </script>
 
 <template>

@@ -5,6 +5,7 @@
       "description": "School Sports & more Activity",
       "cardPic": "HomePic",
       "active": false,
+      "main": false,
       "color": "rgba(58, 110, 241)",
       "sectionHeaders": [
         {
@@ -18,6 +19,7 @@
       "title": "SOP School",
       "description": "Classes about serbian language, history and more",
       "active": false,
+      "main": false,
       "cardPic": "SchoolPic",
       "color": "rgba(58, 110, 241)",
       "sectionHeaders": [
@@ -31,6 +33,7 @@
     {
       "title": "SOP Sports",
       "active": false,
+      "main": false,
       "description": "Sport events and courses in offer!",
       "cardPic": "SportPic",
       "color": "rgba(58, 110, 241)",
@@ -46,6 +49,7 @@
       "title": "Gallery",
       "description": "We offer information about serbian schooling and Rotterdam Sport Days",
       "active": false,
+      "main": false,
       "cardPic": "HomePic",
       "color": "rgba(58, 110, 241)",
       "sectionHeaders": [
@@ -60,6 +64,7 @@
       "title": "Contact",
       "description": "We offer information about serbian schooling and Rotterdam Sport Days",
       "active": false,
+      "main": false,
       "cardPic": "HomePic",
       "color": "rgba(58, 110, 241)",
       "sectionHeaders": [

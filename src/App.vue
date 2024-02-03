@@ -10,7 +10,7 @@ import { RouterView } from 'vue-router'
       <RouterView />
       <MenuBar />
     </data>
-  
-  <Stars />
+    <Stars />
+    
 </template>
 <style scoped></style>

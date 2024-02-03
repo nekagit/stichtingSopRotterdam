@@ -1,12 +1,18 @@
 <script setup lang="ts">
+import FullAnimationCard from '@/components/ui/card/internet/FullAnimationCard.vue'
 import MultipleCard from '@/components/ui/card/internet/MultipleCard.vue'
-import CardData from '@/stores/cardData.json'
-const allCards = CardData.allCards
-const homeCard = allCards[0]
-const sportCard = allCards[1]
-const schoolCard = allCards[2]
+import { appView } from '@/interfaces/App'
+import { useAppStateStore } from '@/stores/appState'
+import { useCardStore } from '@/stores/card'
+import { storeToRefs } from 'pinia'
+const { activeCard } = useCardStore()
+const { currentMode } = storeToRefs(useAppStateStore())
 </script>
-
 <template>
-  <MultipleCard />
+  <div v-if="currentMode == appView.List">
+    <MultipleCard />
+  </div>
+  <div v-else>
+    <FullAnimationCard v-bind="activeCard" />
+  </div>
 </template>
