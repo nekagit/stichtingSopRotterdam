@@ -5,10 +5,19 @@ import { RouterView } from 'vue-router'
 </script>
 
 <template>
-  <data class="grid h-screen m-auto">
+  <main class="grid h-screen m-auto main">
     <RouterView />
     <MenuBar />
-  </data>
+    <JumboTron />
+  </main>
   <Stars />
 </template>
-<style scoped></style>
+<style scoped>
+.main {
+  /* background-image: url('../src/assets/as.png'); */
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: top left;
+  /* background-image: url('../src/assets/logoo.png'); */
+}
+</style>

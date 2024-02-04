@@ -86,8 +86,10 @@ const sop = ref([
 <style scoped>
 .menubar {
   position: absolute;
+  bottom: 40%;
   margin: 0 auto;
-  color: white;
-  border: 1px solid white;
+  color: black;
+  height: auto;
+  border:none;
 }
 </style>

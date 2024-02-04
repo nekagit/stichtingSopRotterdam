@@ -6,47 +6,45 @@ const { setActive, setInactive } = useCardStore()
 const allCards = useCardStore().cards
 </script>
 
-
 <template>
   <div class="trick">
-  <div class="grid h-screen w-fit mx-auto p-20">
-    <div class="ag-courses_item" v-for="(item, index) in allCards" :key="index">
-      <div v-if="item.active == true">
-        <a href="#" class="ag-courses-item_link_main">
-          <div class="ag-courses-item_title" @click="setInactive(item.title)">
+    <div class="grid h-screen w-fit mx-auto p-20">
+      <div class="ag-courses_item" v-for="(item, index) in allCards" :key="index">
+        <div v-if="item.active == true">
+          <a href="#" class="ag-courses-item_link_main">
+            <div class="ag-courses-item_title" @click="setInactive(item.title)">
               {{ item.title }}
-          </div>
-          <CardPost v-bind="item" />
-          <Stars />
-          <div class="ag-courses-item_bg" >
-          </div>
-        </a>
-      </div>
-      <div v-else>
-        <a href="#" class="ag-courses-item_link">
-          <Stars />
-          <div class="ag-courses-item_bg" >
-            <div class="ag-courses-item-bg-text"></div>
-          </div>
+            </div>
+            <CardPost v-bind="item" />
+            <Stars />
+            <div class="ag-courses-item_bg"></div>
+          </a>
+        </div>
+        <div v-else>
+          <a href="#" class="ag-courses-item_link">
+            <Stars />
+            <div class="ag-courses-item_bg">
+              <div class="ag-courses-item-bg-text"></div>
+            </div>
 
-          <div class="ag-courses-item_title" @click="setActive(item.title)">
-            {{ item.title }}
-          </div>
+            <div class="ag-courses-item_title" @click="setActive(item.title)">
+              {{ item.title }}
+            </div>
 
-          <div class="ag-courses-item_date-box">
-            <span class="ag-courses-item_date"> {{ item.description }}</span>
-          </div>
-        </a>
+            <div class="ag-courses-item_date-box">
+              <span class="ag-courses-item_date"> {{ item.description }}</span>
+            </div>
+          </a>
+        </div>
       </div>
     </div>
-  </div>
   </div>
 </template>
 
 <style scoped>
 .trick {
-  /* position: absolute;
-  left: -540px; */
+  position: absolute;
+  right: -340px;
 }
 .ag-courses-item_link_main::-webkit-scrollbar {
   display: none;
@@ -55,7 +53,7 @@ const allCards = useCardStore().cards
   display: block;
   height: 33vh;
   padding: 10px 20px;
-  background-color: #121212;
+  background-color: rgba(181, 54, 54, 0);
   overflow: hidden;
   overflow-y: auto;
   position: relative;
@@ -71,6 +69,9 @@ const allCards = useCardStore().cards
   overflow-y: auto;
   position: relative;
   -ms-overflow-style: none; /* IE and Edge */
+  box-shadow:
+    0px 10px 83px -7px #000000,
+    5px 5px 15px 5px rgba(0, 0, 0, 0);
   scrollbar-width: none; /* Firefox */
 }
 .ag-courses-item_link:hover,
@@ -110,7 +111,7 @@ const allCards = useCardStore().cards
   transition: color 0.5s ease;
 }
 .ag-courses-item_bg {
-  height:128px;
+  height: 128px;
   width: 128px;
   background-color: #f9b234;
 
@@ -176,7 +177,6 @@ const allCards = useCardStore().cards
   }
 }
 
-
 @media only screen and (max-width: 979px) {
   .ag-courses_item {
     -ms-flex-preferred-size: calc(50% - 30px);
@@ -210,5 +210,4 @@ const allCards = useCardStore().cards
     font-size: 16px;
   }
 }
-
 </style>
