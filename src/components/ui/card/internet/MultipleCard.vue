@@ -45,8 +45,8 @@ const allCards = useCardStore().cards
 
 <style scoped>
 .trick {
-  position: absolute;
-  left: -540px;
+  /* position: absolute;
+  left: -540px; */
 }
 .ag-courses-item_link_main::-webkit-scrollbar {
   display: none;
