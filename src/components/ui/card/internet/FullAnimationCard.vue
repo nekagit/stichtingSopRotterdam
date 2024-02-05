@@ -24,7 +24,7 @@ defineProps<ICustomCard>()
         <div class="dot animate slide-up delay-7"></div>
         <div class="dot animate slide-up delay-8"></div>
       </div>
-    </div>
+    </div>  
     <div class="text">
       <img class="inset" :src="cardPic" alt="" />
       <div v-for="sectionHeader in sectionHeaders" :key="sectionHeader.title">

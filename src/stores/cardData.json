@@ -3,14 +3,14 @@
     {
       "title": "Stichting SOP Rotterdam",
       "description": "School Sports & more Activity",
-      "cardPic": "HomePic",
+      "cardPic": "src/assets/logoo.png",
       "active": false,
       "main": false,
       "color": "rgba(58, 110, 241)",
       "sectionHeaders": [
         {
           "title": "Sponsors",
-          "img": "Sponsors",
+          "img": "src/assets/logoo.png",
           "description": ""
         }
       ]
@@ -20,12 +20,12 @@
       "description": "Classes about serbian language, history and more",
       "active": false,
       "main": false,
-      "cardPic": "SchoolPic",
+      "cardPic": "src/assets/schoolCard.png",
       "color": "rgba(58, 110, 241)",
       "sectionHeaders": [
         {
           "title": "Nastava",
-          "img": "Sponsors",
+          "img": "src/assets/school1.png",
           "description": "asdfasdfsadfsa"
         }
       ]
@@ -35,12 +35,12 @@
       "active": false,
       "main": false,
       "description": "Sport events and courses in offer!",
-      "cardPic": "SportPic",
+      "cardPic": "src/assets/sportCard.png",
       "color": "rgba(58, 110, 241)",
       "sectionHeaders": [
         {
           "title": "Sportske Dane",
-          "img": "Sponsors",
+          "img": "src/assets/sport1.png",
           "description": "asdfasdfsadfsa"
         }
       ]
@@ -50,12 +50,12 @@
       "description": "We offer information about serbian schooling and Rotterdam Sport Days",
       "active": false,
       "main": false,
-      "cardPic": "HomePic",
+      "cardPic": "src/assets/galleryPic.png",
       "color": "rgba(58, 110, 241)",
       "sectionHeaders": [
         {
           "title": "Sponsors",
-          "img": "Sponsors",
+          "img": "src/assets/gallery1.png",
           "description": "asdfasdfsadfsa"
         }
       ]
@@ -65,12 +65,12 @@
       "description": "We offer information about serbian schooling and Rotterdam Sport Days",
       "active": false,
       "main": false,
-      "cardPic": "HomePic",
+      "cardPic": "src/assets/logoo.png",
       "color": "rgba(58, 110, 241)",
       "sectionHeaders": [
         {
           "title": "Sponsors",
-          "img": "Sponsors",
+          "img": "src/assets/logoo.png",
           "description": "asdfasdfsadfsa"
         }
       ]

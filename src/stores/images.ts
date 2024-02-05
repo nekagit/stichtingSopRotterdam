@@ -3,12 +3,11 @@ import CardData from '@/stores/cardData.json'
 import { defineStore } from 'pinia'
 import { ref } from 'vue'
 
-export const useCardStore = defineStore('cards', {
+export const useImagesStore = defineStore('images', {
   state: () => {
-    const allCards: ICustomCard[] = CardData.allCards.splice(0, 3 )
+    const allCards: ICustomCard[] = CardData.allCards.splice(0, 5)
     const cards = ref(allCards)
-    const activeCard = ref(cards.value.find((x) => x.main) ?? cards.value[0])
-    return { cards, activeCard }
+    return { cards }
   },
   actions: {
     setInactive(newActiveTitle: string) {

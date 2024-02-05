@@ -9,10 +9,10 @@ const { activeCard } = useCardStore()
 const { currentMode } = storeToRefs(useAppStateStore())
 </script>
 <template>
-  <div class="main2" v-if="currentMode == appView.List">
+  <div class="main grid" v-if="currentMode == appView.List">
     <MultipleCard />
   </div>
-  <div class="main" v-else>
+  <div class="main2 grid" v-else>
     <FullAnimationCard v-bind="activeCard" />
   </div>
 </template>
@@ -23,14 +23,14 @@ const { currentMode } = storeToRefs(useAppStateStore())
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-position: top left;
-  animation: fadeInFromTopLeft 2s ease-in-out forwards; /* 1s delay */
+  animation: fadeInFromTopLeft 1.5s ease-in-out forwards; /* 1s delay */
 
   /* background-image: url('../src/assets/logoo.png'); */
 }
 
 @keyframes fadeInFromTopLeft {
   0% {
-    transform: translate(-200px, -200px);
+    transform: translate(-300px, -400px);
   }
   100% {
     transform: translate(0, 0);
@@ -39,19 +39,17 @@ const { currentMode } = storeToRefs(useAppStateStore())
 
 @keyframes fadeIn {
   0% {
-    opacity: 0;
     transform: translate(-33px, 0px);
   }
   100% {
-    opacity: 1;
     transform: translate(0, 0);
   } 
 }
-.main2 {
-  background-image: url('../assets/fdas.png');
+.main2  {
+  background-image: url('../assets/Background/fdas.png');
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-position: bottom right;
-  animation: fadeIn 2s ease-in-out forwards; /* 1s delay */
+  animation: fadeIn 1.5s ease-in-out forwards; /* 1s delay */
 }
 </style>
